@@ -90,11 +90,23 @@ Python 3,python3,found,Python 3.13.5,3.13.5
 
 ## Project layout
 
+```
+.
+├── CMakeLists.txt          # CMake build configuration
+├── include/                # Public headers
+│   ├── lang_scan.h
+│   └── os_info.h
+└── src/                    # Implementation
+    ├── main.c
+    ├── lang_scan.c
+    └── os_info.c
+```
+
 | File | Purpose |
 | --- | --- |
-| [main.c](main.c) | CLI argument parsing and entry point. |
-| [lang_scan.h](lang_scan.h) / [lang_scan.c](lang_scan.c) | Language table, `$PATH` scanning, version extraction, and table/JSON/CSV printers. |
-| [os_info.h](os_info.h) / [os_info.c](os_info.c) | Reads `/etc/os-release` and `uname()` to print a one-line OS summary. |
+| [src/main.c](src/main.c) | CLI argument parsing and entry point. |
+| [include/lang_scan.h](include/lang_scan.h) / [src/lang_scan.c](src/lang_scan.c) | Language table, `$PATH` scanning, version extraction, and table/JSON/CSV printers. |
+| [include/os_info.h](include/os_info.h) / [src/os_info.c](src/os_info.c) | Reads `/etc/os-release` and `uname()` to print a one-line OS summary. |
 | [CMakeLists.txt](CMakeLists.txt) | CMake build configuration. |
 
 ## How it works

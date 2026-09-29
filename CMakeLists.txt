@@ -10,4 +10,10 @@ endif()
 
 add_compile_options(-Wall -Wextra)
 
-add_executable(lang-detector main.c lang_scan.c os_info.c)
+add_executable(lang-detector
+    src/main.c
+    src/lang_scan.c
+    src/os_info.c
+)
+
+target_include_directories(lang-detector PRIVATE include)
